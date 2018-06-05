@@ -14,7 +14,9 @@ module.exports = {
     filename: 'bundle.js'
   },
   devServer: {
-    port: 9000
+    port: 9000,
+    host: '192.168.0.103',
+    useLocalIp: true
   },
   resolve: {
     alias: {
