@@ -8,7 +8,7 @@ const mapStateToProps = (state) => ({
 
 @connect(mapStateToProps)
 export default class App extends React.Component {
-  render () {
+  render() {
     console.log(this.props.state);
 
     return <div className="main-app">
