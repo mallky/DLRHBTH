@@ -11,19 +11,6 @@ const initialState = {
 const app = (state = initialState, action) => {
   switch (action.type) {
 
-    case types.OPEN_TOOLTIP:
-      return {
-        ...state,
-        position: action.position,
-        isOpen: true
-      };
-
-    case types.CLOSE_TOOLTIP:
-      return {
-        ...state,
-        isOpen: false
-      };
-
     default:
       return state;
   }
