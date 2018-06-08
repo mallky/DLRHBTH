@@ -6,6 +6,7 @@ import { addContent } from './store/actions/actions';
 import pages from './pages.json';
 
 import Header from './src/components/header/Header.jsx';
+import Footer from './src/components/footer/Footer.jsx';
 import Pages from './src/components/pages/Pages.jsx';
 
 const mapDispatchToProps = (dispatch) => ({
@@ -22,6 +23,7 @@ export default class App extends React.Component {
     return <div className="main-app">
       <Header />
       <Pages />
+      <Footer />
     </div>;
   }
 }
