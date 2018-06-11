@@ -12,7 +12,10 @@ export default class Pages extends React.Component {
   render() {
     return this.props.pages.map((page, i) => {
 
-      return <Page key={i} page={page.content} />;
+      return <Page
+        key={i}
+        page={page.content}
+        num={i} />;
     });
   }
 }

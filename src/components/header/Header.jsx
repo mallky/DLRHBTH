@@ -18,9 +18,11 @@ export default class Header extends React.Component {
   constructor(props) {
     super(props);
 
-    this.header = null;
+    this.setHeader = this.setHeader.bind(this);
+  }
 
-    this.setHeader = (header) => this.props.setHeader(header);
+  setHeader(header) {
+    this.props.setHeader(header);
   }
 
   render() {

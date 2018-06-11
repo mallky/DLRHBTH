@@ -1,6 +1,6 @@
 {
-  "header": "<div class='header'>ЭТО ХЕДЕР</div>",
-  "footer": "<div class='footer'>ЭТО ФУТЕР</div>",
+  "header": "<div class='header text-align-center'>Здесь могла бы быть красивая картинка с логотипом, но...</div>",
+  "footer": "<div class='footer text-align-center'>Спасибо! Живите и процветайте!</div>",
   "pages": [
     {
       "content": "<h1>Привет уважаемый!!!</h1>"

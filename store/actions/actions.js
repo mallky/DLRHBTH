@@ -10,3 +10,13 @@ export const setHeader = (header) => ({
   header
 });
 
+export const setFooter = (footer) => ({
+  type: types.SET_FOOTER,
+  footer
+});
+
+export const addToPages = (page) => ({
+  type: types.ADD_TO_PAGES,
+  page
+});
+

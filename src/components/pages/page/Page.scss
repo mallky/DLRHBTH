@@ -1,13 +1,15 @@
+$margin: 50px;
+
 .page {
   width: 100%;
   height: calc(100vh - 100px);
   border: 1px solid black;
 
   &:first-of-type {
-    margin-top: 50px;
+    margin-top: $margin;
   }
 
   &:last-of-type {
-    margin-bottom: 50px;
+    margin-bottom: $margin;
   }
 }
