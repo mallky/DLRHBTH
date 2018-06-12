@@ -1,16 +1,22 @@
 $margin: 50px;
 
 .page {
+  &:not(.page-2) {
+    height: calc(100vh - 100px);
+  }
+
   position: relative;
   width: 100%;
-  height: calc(100vh - 100px);
-  border: 1px solid black;
 
   &:first-of-type {
     margin-top: $margin;
   }
 
   &:last-of-type {
-    margin-bottom: $margin;
+    margin-bottom: $margin * 2;
+  }
+
+  &:nth-child(2n+1) {
+    background: #EEE;
   }
 }

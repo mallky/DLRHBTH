@@ -14,14 +14,16 @@ module.exports = {
     filename: 'bundle.js'
   },
   devServer: {
-    port: 9000
+    port: 9000,
+    host: '0.0.0.0'
   },
   resolve: {
     alias: {
       utils: path.resolve(__dirname, 'utils/utils'),
       actions: path.resolve(__dirname, 'store/actions/actions'),
       components: path.resolve(__dirname, 'src/components'),
-      common: path.resolve(__dirname, 'src/common')
+      common: path.resolve(__dirname, 'src/common'),
+      img: path.resolve(__dirname, 'img')
     }
   },
   module: {

@@ -2,6 +2,10 @@
   text-align: center;
 }
 
+.invisible {
+  display: none;
+}
+
 .round-button {
   width: $btn-size;
   height: $btn-size;
@@ -18,6 +22,11 @@
   }
 }
 
+.common-block {
+  width: 156px;
+  border: 1px solid black;
+}
+
 .to-top {
   position: fixed;
   top: calc(100% - 150px);
@@ -29,6 +38,7 @@
   top: calc(100% - 60px);
   left: calc(50% - 50px / 2);
   z-index: 10;
+  animation: pulse 2s infinite;
 }
 
 header, footer {
@@ -37,8 +47,67 @@ header, footer {
   @include flex-center(row);
 }
 
-.page-0 {
+.page-0, .page-1 {
   text-align: center;
 
   @include flex-center(column);
+}
+
+.block-with-blocks {
+  @include flex();
+
+  justify-content: flex-start;
+  align-items: center;
+
+  & > div {
+    margin: 5px;
+
+    @include flex-center(column);
+
+    img {
+      margin: 3px;
+    }
+
+    .inner {
+      text-align: center;
+    }
+  }
+}
+
+.instruction {
+  @include flex();
+
+  justify-content: space-around;
+  align-items: stretch;
+
+  .step {
+    flex: 1;
+    margin: 3rem;
+    padding: 1rem;
+    text-align: center;
+    background: white;
+    box-shadow: 0 0 4px 4px gray;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: -2.2rem;
+      top: -0.5rem;
+      font-size: 2rem;
+      font-weight: bolder;
+    }
+
+    &:first-child {
+      &::before {
+        content: '1.';
+      }
+    }
+
+    &:last-child {
+      &::before {
+        content: '2.';
+      }
+    }
+  }
 }

@@ -22,12 +22,29 @@ const mapDispatchToProps = (dispatch) => ({
 
 @connect(mapStateToProps, mapDispatchToProps)
 export default class App extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = { invisible: true };
+    this.onScroll = this.onScroll.bind(this);
+  }
+
   componentDidMount() {
     this.props.addContent(pages);
+
+    document.addEventListener('scroll', this.onScroll);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener(this.onScroll);
   }
 
   toTop(e) {
     utils.scrollTo(this.props.header, { shift: 0, direction: 1 });
+  }
+
+  onScroll(e) {
+    this.setState({ invisible: window.scrollY < window.innerHeight / 2 });
   }
 
   render() {
@@ -35,7 +52,7 @@ export default class App extends React.Component {
       <Header />
       <Pages />
       <Footer />
-      <Button icon={top} onClick={this.toTop.bind(this)} className='round-button to-top' />
+      <Button icon={top} onClick={this.toTop.bind(this)} className={`round-button to-top ${this.state.invisible ? 'invisible' : ''}`} />
     </div>;
   }
 }

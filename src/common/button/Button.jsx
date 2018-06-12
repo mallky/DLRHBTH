@@ -4,18 +4,16 @@ import FontAwesome from '@fortawesome/react-fontawesome';
 import utils from 'utils';
 import parser from 'html-react-parser';
 
-export default class Button extends React.Component {
-  render() {
-    const icon = this.props.icon ? <FontAwesome icon={this.props.icon} /> : null;
-    const inner = this.props.inner ? parser(this.props.inner) : null;
+export default function Button ({ icon, inner, className, onClick }) {
+  const _icon = icon ? <FontAwesome icon={icon} /> : null;
+  const _inner = inner ? parser(inner) : null;
 
-    return (<button
-      className={this.props.className}
-      onClick={this.props.onClick}>
-      {icon}
-      {inner}
-    </button>);
-  }
+  return (<button
+    className={className}
+    onClick={onClick}>
+    {_icon}
+    {_inner}
+  </button>);
 }
 
 Button.defaultProps = {
