@@ -1,6 +1,7 @@
 $margin: 50px;
 
 .page {
+  position: relative;
   width: 100%;
   height: calc(100vh - 100px);
   border: 1px solid black;

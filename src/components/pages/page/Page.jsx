@@ -3,10 +3,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import parser from 'html-react-parser';
 import { connect } from 'react-redux';
-import FontAwesome from '@fortawesome/react-fontawesome';
-import down from '@fortawesome/fontawesome-free-solid/faAngleDown';
-import top from '@fortawesome/fontawesome-free-solid/faAngleUp';
-import { addToPages } from '../../../../store/actions/actions.js';
+import { addToPages } from 'actions';
+import down from '@fortawesome/fontawesome-free-solid/faChevronDown';
+import Button from 'common/button/Button.jsx';
 
 import utils from 'utils';
 
@@ -33,28 +32,26 @@ export default class Page extends React.Component {
     this.props.setPage(page);
   }
 
-  toTop(e) {
-    utils.scrollTo(this.props.header, 1);
+  get lastPage () {
+    const { num, pages } = this.props;
+
+    return num === pages.length - 1;
   }
 
-  toBot(e) {
-    const { num, pages, footer } = this.props;
-    const _num = num === pages.length - 1 ? num : num + 1;
-    const nextItem = num === pages.length - 1 ? footer : pages[_num];
+  toBot() {
+    const { num, pages, footer, header } = this.props;
+    const _num = this.lastPage ? num : num + 1;
+    const nextItem = this.lastPage ? footer : pages[_num];
+    const shift = header.getBoundingClientRect().height;
 
-    utils.scrollTo(nextItem);
+    utils.scrollTo(nextItem, { shift });
   }
 
   render() {
-    return <div className="page" ref={this.setPage} >
+    return <div className={`page page-${this.props.num}`} ref={this.setPage} >
       {parser(this.props.page)}
       <div />
-      <button className="to-top" onClick={this.toTop.bind(this)}>
-        <FontAwesome icon={top} />
-      </button>
-      <button className="to-bot" onClick={this.toBot.bind(this)}>
-        <FontAwesome icon={down} />
-      </button>
+      {!this.lastPage && <Button icon={down} onClick={this.toBot.bind(this)} className='round-button bot-center' />}
     </div>;
   }
 }

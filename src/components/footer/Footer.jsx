@@ -2,7 +2,7 @@ import './Footer.scss';
 import React from 'react';
 import { connect } from 'react-redux';
 import parser from 'html-react-parser';
-import { setFooter } from '../../../store/actions/actions.js';
+import { setFooter } from 'actions';
 
 const mapStateToProps = (state) => ({
   footer: state.data.content.footer

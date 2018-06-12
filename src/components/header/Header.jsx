@@ -1,7 +1,7 @@
 import './Header.scss';
 import React from 'react';
 import { connect } from 'react-redux';
-import { setHeader } from '../../../store/actions/actions.js';
+import { setHeader } from 'actions';
 
 import parser from 'html-react-parser';
 

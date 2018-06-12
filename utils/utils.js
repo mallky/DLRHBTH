@@ -1,9 +1,11 @@
-const scrollTo = (toElem, direction = -1) => {
+const scrollTo = (toElem, { shift = 0, direction = -1 }) => {
   const start = window.scrollY;
-  const end = direction === -1 ? start + toElem.getBoundingClientRect().top : toElem.getBoundingClientRect().top;
+  const end = direction === -1
+    ? start + toElem.getBoundingClientRect().top - shift
+    : toElem.getBoundingClientRect().top + shift;
 
   const timeNow = performance.now();
-  const velocity = 1.3;
+  const velocity = 0.5;
   const acceleration = 0.01;
   const _direction = start > end ? -1 : 1;
 

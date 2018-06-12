@@ -18,7 +18,10 @@ module.exports = {
   },
   resolve: {
     alias: {
-      utils: path.resolve(__dirname, 'utils/utils')
+      utils: path.resolve(__dirname, 'utils/utils'),
+      actions: path.resolve(__dirname, 'store/actions/actions'),
+      components: path.resolve(__dirname, 'src/components'),
+      common: path.resolve(__dirname, 'src/common')
     }
   },
   module: {

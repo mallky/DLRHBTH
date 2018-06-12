@@ -2,8 +2,43 @@
   text-align: center;
 }
 
-.to-top, .to-bot {
-  width: 30px;
-  height: 30px;
+.round-button {
+  width: $btn-size;
+  height: $btn-size;
   border-radius: $radius;
+  color: black;
+  background: transparent;
+  border: 1px solid transparent;
+  font-size: 200%;
+  cursor: pointer;
+  outline: none;
+
+  &:hover {
+    color: gray;
+  }
+}
+
+.to-top {
+  position: fixed;
+  top: calc(100% - 150px);
+  left: calc(100% - 60px);
+}
+
+.bot-center {
+  position: absolute;
+  top: calc(100% - 60px);
+  left: calc(50% - 50px / 2);
+  z-index: 10;
+}
+
+header, footer {
+  z-index: 11;
+
+  @include flex-center(row);
+}
+
+.page-0 {
+  text-align: center;
+
+  @include flex-center(column);
 }
