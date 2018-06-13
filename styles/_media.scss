@@ -3,6 +3,14 @@
   html {
     font-size: 18px !important;
   }
+
+  .block-with-blocks {
+
+    .common-block {
+      width: 30px;
+      height: 20px;
+    }
+  }
 }
  
 /* Portrait tablet to landscape and desktop */
@@ -35,6 +43,31 @@
   .instruction {
     flex-direction: column;
   }
+  .block-with-blocks {
+    justify-content: center;
+  }
+}
+ 
+/* Landscape small phones and down */
+@media (max-width: 321px) {
+  html {
+    font-size: 10px !important;
+  }
+
+  .instruction {
+    flex-direction: column;
+
+    .step {
+      margin: 1rem 3rem;
+    }
+  }
+
+  .page-1 {
+    h1 {
+      margin-bottom: 0;
+    }
+  }
+
   .block-with-blocks {
     justify-content: center;
   }

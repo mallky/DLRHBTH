@@ -52,7 +52,7 @@ export default class Page extends React.Component {
 
   renderInstruction() {
     return this.props.steps && this.props.steps.map((step, i) => {
-      return <Block inner={step} className='step' key={`step-${i}`} />
+      return <Block inner={step} className='step' key={`step-${i}`} onClick={false} />
     });
   }
 
