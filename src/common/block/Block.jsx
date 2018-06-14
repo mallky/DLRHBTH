@@ -29,7 +29,7 @@ export default class Block extends React.Component {
 
   render() {
     const { img, inner, className} = this.props;
-    const _img = img ? <img src={img.src} alt={img.alt || 'image'} /> : null;
+    const _img = img ? <div className='img-wrapper'><img src={img.src} alt={img.alt || 'image'} /></div> : null;
     const _inner = inner ? <div className='inner'>{parser(inner)}</div> : null;
 
     return (<div className={className} onClick={this.openPopup.bind(this)}>
