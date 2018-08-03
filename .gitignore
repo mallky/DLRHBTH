@@ -3,3 +3,6 @@
 node_modules/
 
 dist/
+just4help.ru/
+ftp-config/*
+.htaccess
