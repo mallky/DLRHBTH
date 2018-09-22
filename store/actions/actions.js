@@ -1,22 +1,15 @@
 import * as types from "../types/types";
 
-export const addContent = (content) => ({
+export const addContent = (articles) => ({
   type: types.ADD_CONTENT,
+  articles
+});
+
+export const toPost = (content) => ({
+  type: types.TO_POST,
   content
 });
 
-export const setHeader = (header) => ({
-  type: types.SET_HEADER,
-  header
+export const toPreview = () => ({
+  type: types.TO_PREVIEW
 });
-
-export const setFooter = (footer) => ({
-  type: types.SET_FOOTER,
-  footer
-});
-
-export const addToPages = (page) => ({
-  type: types.ADD_TO_PAGES,
-  page
-});
-

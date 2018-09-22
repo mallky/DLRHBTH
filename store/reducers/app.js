@@ -1,28 +1,26 @@
 import * as types from "../types/types";
 
 const initialState = {
-  header: null,
-  footer: null,
-  pages: []
+  header: 'Статьи:',
+  isPreview: true,
+  id: 0
 };
 
 const app = (state = initialState, action) => {
   switch (action.type) {
 
-    case types.SET_HEADER:
+    case types.TO_POST:
       return {
         ...state,
-        header: action.header
+        isPreview: false,
+        header: action.content.header,
+        id: action.content.id
       }
-    case types.SET_FOOTER:
+    case types.TO_PREVIEW:
       return {
         ...state,
-        footer: action.footer
-      }
-    case types.ADD_TO_PAGES:
-      return {
-        ...state,
-        pages: [...state.pages, action.page]
+        isPreview: true,
+        header: 'Статьи:'
       }
 
     default:

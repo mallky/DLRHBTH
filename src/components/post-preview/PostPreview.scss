@@ -1,0 +1,30 @@
+@import 'styles/media';
+
+.article {
+  width: 75%;
+  padding: 1em;
+
+  &:nth-child(2n) {
+    background: #DEDEDE;
+  }
+
+  @include fromTabletToDesctop() {
+    width: 90%;
+  }
+
+  @include fromPhonesToTablet() {
+    width: initial;
+  }
+
+  a {
+    color: black;
+  }
+
+  .article-info {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    font-size: 70%;
+    color: gray;
+  }
+}

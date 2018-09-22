@@ -23,6 +23,7 @@ module.exports = {
       actions: path.resolve(__dirname, 'store/actions/actions'),
       components: path.resolve(__dirname, 'src/components'),
       common: path.resolve(__dirname, 'src/common'),
+      styles: path.resolve(__dirname, 'styles'),
       img: path.resolve(__dirname, 'img')
     }
   },

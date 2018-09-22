@@ -1,9 +1,7 @@
+import './Popup.scss';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
-import FontAwesome from '@fortawesome/react-fontawesome';
-import utils from 'utils';
-import parser from 'html-react-parser';
 
 export default class Popup extends React.Component {
   componentDidMount() {

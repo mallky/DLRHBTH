@@ -1,74 +1,34 @@
 /* Large desktop */
-@media (min-width: 1200px) {
-  html {
-    font-size: 18px !important;
-  }
-
-  .block-with-blocks {
-
-    .common-block {
-      width: 30px;
-      height: 20px;
-    }
+@mixin largeDesc() {
+  @media (min-width: 1200px) {
+    @content;
   }
 }
  
 /* Portrait tablet to landscape and desktop */
-@media (min-width: 768px) and (max-width: 979px) {
-  html {
-    font-size: 16px !important;
-
-    .block-with-blocks {
-      justify-content: center;
-    }
-  }
+@mixin fromTabletToDesctop() {
+  @media (min-width: 768px) and (max-width: 979px) {
+    @content;
+  }  
 }
  
 /* Landscape phone to portrait tablet */
-@media (max-width: 767px) {
-  html {
-    font-size: 14px !important;
-  }
-  .block-with-blocks {
-    justify-content: center;
-  }
+@mixin fromPhonesToTablet {
+  @media (max-width: 767px) {
+    @content;
+  }    
 }
  
 /* Landscape phones and down */
-@media (max-width: 480px) {
-  html {
-    font-size: 12px !important;
-  }
-
-  .instruction {
-    flex-direction: column;
-  }
-  .block-with-blocks {
-    justify-content: center;
-  }
+@mixin tolandscapePhones {
+  @media (max-width: 480px) {
+    @content;
+  } 
 }
  
 /* Landscape small phones and down */
-@media (max-width: 376px) {
-  html {
-    font-size: 10px !important;
-  }
-
-  .instruction {
-    flex-direction: column;
-
-    .step {
-      margin: 1rem 3rem;
-    }
-  }
-
-  .page-1 {
-    h1 {
-      margin-bottom: 0;
-    }
-  }
-
-  .block-with-blocks {
-    justify-content: center;
-  }
+@mixin toSmallPhones {
+  @media (max-width: 376px) {
+    @content;
+  } 
 }

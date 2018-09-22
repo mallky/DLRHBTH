@@ -1,14 +1,7 @@
 import * as types from "../types/types";
 
 const initialState = {
-  content: {
-    header: '',
-    pages: [
-      {
-        content: ''
-      }
-    ]
-  }
+  articles: [] 
 }
 
 const data = (state = initialState, action) => {
@@ -17,7 +10,7 @@ const data = (state = initialState, action) => {
     case types.ADD_CONTENT:
       return {
         ...state,
-        content: action.content
+        articles: action.articles
       };
 
     default:

@@ -1,0 +1,21 @@
+@import 'styles/mixins';
+@import 'styles/media';
+
+.side-block {
+  height: 100vh;
+  width: 30vw;
+  border: 1px solid black;
+  padding: 0 5px 0 5vw;
+  background-color: #DEDEDE;
+
+  .about {
+    text-align: center;
+  }
+
+  @include flex-center(column);
+
+  @include fromPhonesToTablet() {
+    width: 100vw; 
+    height: 10vh;
+  }
+}
