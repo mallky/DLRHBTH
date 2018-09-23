@@ -11,3 +11,24 @@
     transform: scale3d(1, 1, 1);
   }
 }
+
+@keyframes close {
+  from { width: 30vw; margin-left: 0; }
+  to { width: 20px; margin-left: 15vw; }
+}
+
+@keyframes open {
+  from { width: 35px; margin-left: 15vw; }
+  to { width: 30vw; margin-left: 0; }
+}
+
+@keyframes hide {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes show {
+  from { opacity: 0; }
+  90% { opacity: 0; }
+  to { opacity: 1; }
+}

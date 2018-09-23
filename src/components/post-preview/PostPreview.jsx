@@ -1,6 +1,9 @@
 import './PostPreview.scss';
 import React from 'react';
 import PropTypes from 'prop-types';
+
+import { BrowserRouter as Router, Link } from "react-router-dom";
+
 import parser from 'html-react-parser';
 import { connect } from 'react-redux';
 import { toPost } from 'actions';
@@ -33,7 +36,9 @@ export default class PostPreview extends React.Component {
       <div className="article">
         <h2>{ article.header }</h2>
         { parser(article.preview) }
-        <a href="#" onClick={this.onClick}>Читать полностью</a>
+        <Router>
+          <Link to="/post" onClick={this.onClick}>Читать полностью</Link>
+        </Router>
         <div className="article-info">
           <span>{ article.author }</span>
           <span>{ article.date }</span>

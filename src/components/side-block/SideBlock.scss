@@ -1,15 +1,46 @@
 @import 'styles/mixins';
 @import 'styles/media';
+@import 'styles/animation';
 
 .side-block {
+  position: relative;
   height: 100vh;
   width: 30vw;
   border: 1px solid black;
   padding: 0 5px 0 5vw;
   background-color: #DEDEDE;
 
+  &:not(.open) {
+    width: 20px;
+    margin-left: 15vw;
+    animation: close ease 2s;
+
+    & > *:not(.sideblock-btn) {
+      opacity: 0;
+      position: absolute;
+      top: -9999px;
+      animation: hide ease 1s;
+    }
+  }
+
+  &:not(.close) {
+    animation: open ease 2s;
+
+    & > *:not(.sideblock-btn) {
+      
+      position: static;
+      animation: show ease 1s;
+    }
+  }
+
   .about {
     text-align: center;
+  }
+
+  .sideblock-btn {
+    position: absolute;
+    top:0;
+    right: 0;
   }
 
   @include flex-center(column);
