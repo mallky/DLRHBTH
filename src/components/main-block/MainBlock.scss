@@ -4,16 +4,20 @@
 .main-block {
   height: 100vh;
   width: 70vw;
-  border: 1px solid black;
   overflow-y: auto;
   overflow-x: hidden;
 
   h1 {
-    padding-left: 3em;
+    text-align: center;
+    width: 75%;
   }
 
   @include fromPhonesToTablet() {
     width: 100vw;
     height: 90vh;
+
+    h1 {
+      width: 100%;
+    }
   }
 }

@@ -6,7 +6,6 @@ import { BrowserRouter as Router, Link } from "react-router-dom";
 
 import { toPreview } from 'actions';
 import { connect } from 'react-redux';
-import parser from 'html-react-parser';
 
 const mapDispatchtoProps = (dispatch) => {
   return {
@@ -30,7 +29,7 @@ export default class Post extends React.Component {
   }
 
   componentWillMount() {
-    this.article = require(`../../../articles/${this.props.id}.html`);
+    this.article = require(`../../../articles/${this.props.id}.jsx`);
   }
 
   onClick() {
@@ -38,9 +37,11 @@ export default class Post extends React.Component {
   }
 
   render() {
+    const Article = this.article.default;
+
     return <React.Fragment>
-      <div className="article">
-        { parser(this.article) }
+      <div className="article bg-white">
+        <Article />
         <Router>
           <Link to="/#" onClick={this.onClick}>Назад</Link>
         </Router>
