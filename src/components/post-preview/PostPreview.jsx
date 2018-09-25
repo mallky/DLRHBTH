@@ -37,7 +37,7 @@ export default class PostPreview extends React.Component {
         <h2>{ article.header }</h2>
         { parser(article.preview) }
         <Router>
-          <Link to="/post" onClick={this.onClick}>Читать полностью</Link>
+          <Link to={`/post/${this.props.article.id}`} onClick={this.onClick}>Читать полностью</Link>
         </Router>
         <div className="article-info">
           <span>{ article.author }</span>
