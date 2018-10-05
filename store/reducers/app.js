@@ -1,8 +1,6 @@
 import * as types from "../types/types";
 
 const initialState = {
-  header: 'Статьи:',
-  isPreview: true,
   id: 0
 };
 
@@ -11,16 +9,11 @@ const app = (state = initialState, action) => {
 
     case types.TO_POST:
       return {
-        ...state,
-        isPreview: false,
-        header: action.content.header,
-        id: action.content.id
+        ...state
       }
     case types.TO_PREVIEW:
       return {
-        ...state,
-        isPreview: true,
-        header: 'Статьи:'
+        ...state
       }
 
     default:
