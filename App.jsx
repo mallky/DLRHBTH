@@ -1,4 +1,5 @@
 import './App.scss';
+import 'highlight.js/styles/darcula.css';
 import React from 'react';
 import MainBlock from 'components/main-block/MainBlock.jsx';
 import SideBlock from 'components/side-block/SideBlock.jsx';

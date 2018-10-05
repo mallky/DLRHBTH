@@ -1,6 +1,6 @@
 import React from 'react';
 import Highlight from 'react-highlight';
-import hello from 'img/hello.png';
+import hello from '../img/hello.png';
 
 export default function HTMLEntry() {
   return (<div>
@@ -28,7 +28,7 @@ export default function HTMLEntry() {
     <p>
       Откроем страницу в браузере. Мы должны увидеть следущую картину:
     </p>
-    <img src={hello} alt="Hello world" />
+    <img src={`${window.location.origin}/${hello}`} alt="Hello world" />
     <p>
       Это тот минимум, который должен быть в любой html странице. Мы видим главный тег html, внутри которого находятся теги head и body.  
       <em>Итак</em>, получается что тег пишется в с помощью символов &lt;, &gt; и \, открывающий тег &lt;html&gt; и закрывающий &lt;/html&gt;. 

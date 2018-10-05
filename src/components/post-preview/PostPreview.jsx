@@ -2,7 +2,8 @@ import './PostPreview.scss';
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
+import ArticleInfo from 'common/article-info/ArticleInfo.jsx';
 
 import parser from 'html-react-parser';
 import { connect } from 'react-redux';
@@ -36,13 +37,8 @@ export default class PostPreview extends React.Component {
       <div className="article">
         <h2>{ article.header }</h2>
         { parser(article.preview) }
-        <Router>
-          <Link to={`/post/${this.props.article.id}`} onClick={this.onClick}>Читать полностью</Link>
-        </Router>
-        <div className="article-info">
-          <span>{ article.author }</span>
-          <span>{ article.date }</span>
-        </div>
+        <Link to={`/post/${this.props.article.id}`} onClick={this.onClick}>Читать полностью</Link>
+        <ArticleInfo article={this.props.article} />
       </div>
     </React.Fragment>;
   }

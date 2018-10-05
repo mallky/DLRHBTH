@@ -2,7 +2,8 @@ import './Post.scss';
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
+import ArticleInfo from 'common/article-info/ArticleInfo.jsx';
 
 import { toPreview } from 'actions';
 import { connect } from 'react-redux';
@@ -15,7 +16,8 @@ const mapDispatchtoProps = (dispatch) => {
 
 const mapStateToProps = (state) => {
   return {
-    id: state.app.id
+    id: state.app.id,
+    header: state.app.header
   };
 }
 
@@ -41,19 +43,22 @@ export default class Post extends React.Component {
 
     return <React.Fragment>
       <div className="article bg-white">
+        <h1>{ this.props.header }</h1>
         <Article />
-        <Router>
-          <Link to="/#" onClick={this.onClick}>Назад</Link>
-        </Router>
-        <div className="article-info">
-          <span>{ this.props.article.author }</span>
-          <span>{ this.props.article.date }</span>
-        </div>
+        <Link to="/" onClick={this.onClick}>Назад</Link>
+        <ArticleInfo article={this.props.article} />
       </div>
     </React.Fragment>;
   }
 }
 
 Post.propTypes = {
-  article: PropTypes.object.isRequired
+  article: PropTypes.object
+}
+
+Post.defaultProps = {
+  article: {
+    author: '',
+    date: ''
+  }
 }
