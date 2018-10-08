@@ -1,7 +1,7 @@
 import React from 'react';
 import Highlight from 'react-highlight';
 
-export default function HTMLEntry() {
+export default function Article() {
   return (<div>
     <p>HTML - язык разметки документа. С помощью этого языка создается каркас веб-страницы.</p>
     <p>Разметка пишется с помощью тегов. Например, div, span, em, strong, img, br, hr и тд.</p>
