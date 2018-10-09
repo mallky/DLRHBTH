@@ -20,6 +20,10 @@ export default class SideBlock extends React.Component {
     };
   }
 
+  componentDidMount() {
+    utils.mobileCheck() && this.setState({ isOpen: false });
+  }
+
   onClick() {
     this.setState({isOpen: !this.state.isOpen});
   }

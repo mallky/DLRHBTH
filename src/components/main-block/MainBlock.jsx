@@ -25,11 +25,13 @@ export default class MainBlock extends React.Component {
   }
 
   render() {
-    return <HashRouter>
-      <div className="main-block">
-        <Route path="/" exact component={(match) => this._renderPreview(match) } />
-        <Route path="/post/:id" component={(match) => this._renderPost(match) } />
-      </div>
-    </HashRouter>;
+    return <div className="main-block">
+      <HashRouter>
+        <div>
+          <Route path="/" exact component={(match) => this._renderPreview(match) } />
+          <Route path="/post/:id" component={(match) => this._renderPost(match) } />
+        </div>
+      </HashRouter>
+    </div>;
   }
 }

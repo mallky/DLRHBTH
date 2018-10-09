@@ -42,10 +42,18 @@
     right: 0;
   }
 
+  h2 {
+    text-align: center;
+  }
+
   @include flex-center(column);
 
   @include fromPhonesToTablet() {
     width: 100vw; 
     height: 10vh;
+  }
+
+  img {
+    max-height: 35vh;
   }
 }

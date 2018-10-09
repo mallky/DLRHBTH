@@ -8,7 +8,7 @@
     background: #DEDEDE;
   }
 
-  @include fromTabletToDesctop() {
+  @include fromTabletToDesktop() {
     width: 90%;
   }
 

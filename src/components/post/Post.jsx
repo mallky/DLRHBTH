@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 
 import { Link } from "react-router-dom";
 import ArticleInfo from 'common/article-info/ArticleInfo.jsx';
+import utils from 'utils';
 
 export default class Post extends React.Component {
   constructor(props) {
@@ -23,7 +24,7 @@ export default class Post extends React.Component {
       <div className="article bg-white">
         <h1>{ this.props.article.header }</h1>
         <Article />
-        <Link to="/">Назад</Link>
+        <Link to="/" onClick={utils.scrollElemToTop.bind(null, '.main-block')} >Назад</Link>
         <ArticleInfo article={this.props.article} />
       </div>
     </React.Fragment>;

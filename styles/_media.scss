@@ -1,12 +1,12 @@
 /* Large desktop */
-@mixin largeDesc() {
+@mixin largeDesktop() {
   @media (min-width: 1200px) {
     @content;
   }
 }
  
 /* Portrait tablet to landscape and desktop */
-@mixin fromTabletToDesctop() {
+@mixin fromTabletToDesktop() {
   @media (min-width: 768px) and (max-width: 979px) {
     @content;
   }  

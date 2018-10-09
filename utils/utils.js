@@ -33,7 +33,12 @@ const scrollTo = (toElem, { shift = 0, direction = -1 }) => {
   requestAnimationFrame(scroll);
 };
 
+const scrollElemToTop = (selector) => {
+  document.querySelector(selector).scrollTo(0, 0);
+}
+
 export default {
   scrollTo,
+  scrollElemToTop,
   mobileCheck
 }
