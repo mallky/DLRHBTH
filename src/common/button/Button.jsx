@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import FontAwesome from '@fortawesome/react-fontawesome';
-import utils from 'utils';
 import parser from 'html-react-parser';
 
 export default function Button ({ icon, inner, className, onClick }) {

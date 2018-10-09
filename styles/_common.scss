@@ -2,14 +2,6 @@
   outline: none;
 }
 
-.text-align-center {
-  text-align: center;
-}
-
-.invisible {
-  display: none;
-}
-
 .round-button {
   width: $btn-size;
   height: $btn-size;
@@ -24,24 +16,4 @@
   &:hover {
     color: gray;
   }
-}
-
-.to-top {
-  position: fixed;
-  top: calc(100% - 150px);
-  left: calc(100% - 60px);
-}
-
-.bot-center {
-  position: absolute;
-  top: calc(100% - 60px);
-  left: calc(50% - 50px / 2);
-  z-index: 10;
-  animation: pulse 2s infinite;
-}
-
-header, footer {
-  z-index: 11;
-
-  @include flex-center(row);
 }
