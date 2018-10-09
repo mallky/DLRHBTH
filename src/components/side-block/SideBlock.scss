@@ -7,7 +7,12 @@
   height: 100vh;
   width: 30vw;
   padding: 0 5px 0 5vw;
-  background-color: #DEDEDE;
+  @include square-bg(#dedede);
+
+  @include fromPhonesToTablet() {
+    width: 93vw;
+    padding-bottom: 5px;
+  }
 
   &:not(.open) {
     width: 20px;
@@ -20,15 +25,30 @@
       top: -9999px;
       animation: hide ease 0.5s;
     }
+
+    @include fromPhonesToTablet() {
+      height: 10vh;
+      width: 93vw;
+      margin: 0;
+      animation: none;
+    }
   }
 
   &:not(.close) {
     animation: open ease 0.5s;
 
-    & > *:not(.sideblock-btn) {
-      
+    & > *:not(.sideblock-btn) { 
       position: static;
       animation: show ease 0.5s;
+      
+      @include fromPhonesToTablet() {
+        animation: none;
+      }
+    }
+
+    @include fromPhonesToTablet() {
+      height: auto;
+      animation: none;
     }
   }
 
@@ -47,11 +67,6 @@
   }
 
   @include flex-center(column);
-
-  @include fromPhonesToTablet() {
-    width: 100vw; 
-    height: 10vh;
-  }
 
   img {
     max-height: 35vh;

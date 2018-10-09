@@ -1,3 +1,4 @@
+@import 'styles/mixins';
 @import 'styles/media';
 
 .article {
@@ -5,7 +6,7 @@
   padding: 1em;
 
   &:nth-child(2n) {
-    background: #DEDEDE;
+    @include square-bg(#dedede);
   }
 
   @include fromTabletToDesktop() {
